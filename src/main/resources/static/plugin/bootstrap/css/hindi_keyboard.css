@@ -1,0 +1,213 @@
+ 
+.virtual_keyboard {
+    width: 100%;
+    min-height: 11em;
+    position: relative;
+    margin: auto;
+    padding: 0 1em 0 3em;
+    font-size: 11px;
+}
+
+ 
+
+.icon_container {
+ 
+ 
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .3)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(top, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+    background-color: #269CE9;
+    border-color: #269CE9;
+}
+
+.key_icons td:hover {
+ 
+}
+
+#text_ {
+    padding-top: 0.5em;
+    font-family: mangal;
+ height:180px;
+    width: 100%;
+    border: 0px;
+    background-color: transparent;
+ font-size:16px;word-spacing:1px;line-height:24px;
+    resize: none;
+ 
+    outline: none;
+ 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    text-align: center;
+}
+
+
+#hindi_keyboard table {
+    border-collapse: separate;
+    border-spacing: 4px 5px;
+    font-family: monospace;
+ 	max-width:632px;
+
+}
+
+#hindi_keyboard {
+ 
+    border-radius: 5px 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.key_icons td:hover {
+    background-color: #E6E6E6;
+    cursor: pointer;
+    color: black;
+}
+
+._key {
+    background-color: white;
+    border: 1px solid rgba(55, 96, 117, 1);
+    border-radius: 3px 3px;
+    height: 46px;
+    overflow: hidden;
+    padding: 0px;
+ 
+    text-align: center;
+    width: 38px;
+line-height:18px;
+}
+.mangal{
+font-family:mangal;
+font-size:14px !important;
+}
+.krutidev{
+font-family:krutidev;
+font-size:17px !important;   
+}
+._key:hover {
+ 
+}
+
+._key:active,
+.key_active {
+ 
+}
+
+._right_char {
+    font-size: 13px;
+ 
+}
+
+#hindi_keyboard td.tab_key {
+    width: 60px;
+}
+
+#hindi_keyboard td.space_key {
+    width: 224px;
+    text-align: center;
+    height: 3em;
+}
+
+#hindi_keyboard td.l_shift_key {
+    width: 100px;
+}
+
+#hindi_keyboard td.r_shift_key {
+    width: 116px;
+}
+
+#hindi_keyboard td.ctrl_key {
+    width: 55px;
+    height: 3em;
+    text-align: center;
+}
+
+#hindi_keyboard td.caps_key {
+    width: 75px;
+}
+
+#hindi_keyboard td.enter_key {
+    width: 100px;
+}
+
+#hindi_keyboard td.backspace_key {
+    width: 96px;
+}
+
+#hindi_keyboard td.r_tab_key {
+    width: 45px;
+}
+
+.special_characters {
+    font-family: sans-serif;
+}
+
+._key {
+    border: 1px solid #bbb;
+ 
+    background-color: #fff;
+    border-color: #ccc;
+cursor:pointer;
+  -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+._key:hover{
+  border-color:#3366CC;
+  color:#3366CC;
+}
+._key:active{
+  border-color:#3366CC;
+  color:#fff;
+  background:#3366CC;
+}
+.virtual_keyboard
+  {
+    background-color: white;
+ 
+    border-radius: 1px;
+ 
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 0 4px rgba(0, 0, 0,1);
+
+   
+}
+
+.virtual_keyboard {
+    width: 100%;
+    min-height: 11em;
+    position: relative;
+    margin: auto;
+    padding: 0 0em 0 3em;
+   
+   
+     
+  background-image: linear-gradient(to right, rgba(214,214,214,0.4), rgba(214, 214, 214, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(214, 214,214, 0.1) 65%);
+  box-shadow: inset 0 0 75px rgba(161,161,161,0.3), inset 0 0 20px rgba(161,161,161,0.1), inset 0 0 30px rgba(161,161,161,0.2);
+  
+ 
+ background-color: #FFF;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  padding: 1em 3em 2em 3em;
+}
+#ok{
+border-top:2px solid #EC8686;
+ 
+}
+.bangali span._right_char{
+ 
+ 
+ line-height:1.2em;
+}
