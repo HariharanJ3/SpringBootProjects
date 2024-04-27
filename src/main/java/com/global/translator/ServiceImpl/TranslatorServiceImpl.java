@@ -6,30 +6,16 @@ package com.global.translator.ServiceImpl;
 
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
-import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 import com.global.translator.Service.TranslatorService;
@@ -37,8 +23,6 @@ import com.global.translator.model.Test;
 import com.global.translator.model.UserMaster;
 import com.global.translator.model.Users;
 //import com.global.translator.product.repositories.ProductRepository;
-import com.global.translator.repositories.UserRepository;
-import com.global.translator.repositories.UsersRepository;
 
 /**
  * @author Hariharan J
@@ -46,7 +30,7 @@ import com.global.translator.repositories.UsersRepository;
  * 24-Sep-2022
  */
 @Service
-@Transactional
+//@Transactional
 public class TranslatorServiceImpl implements TranslatorService {
 	
 //	@Autowired
@@ -55,15 +39,17 @@ public class TranslatorServiceImpl implements TranslatorService {
 //	@Autowired
 //	UserRepository userRepository;
 	
-	
 	@Autowired
-	UsersRepository usersRepository;
+	private EntityManager entityManager;
+	
+//	@Autowired
+//	UserRepository usersRepository;
 
-	@Override
-	public UserMaster selectUserMaster(String username) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public UserMaster selectUserMaster(String username) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	
 	@Override
 	public void saveTest(Test test) {
@@ -84,37 +70,51 @@ public class TranslatorServiceImpl implements TranslatorService {
 	}
 	
 	@Override
-	public Users findByEmailid(String email) 
+	public UserMaster findByEmail(String email) 
 	{
-		List<Users> users = usersRepository.findByEmail(email);
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		
-		return users != null ? users.get(0) : null;
+		CriteriaQuery<UserMaster> query = cb.createQuery(UserMaster.class);
+		
+		Root<UserMaster> root = query.from(UserMaster.class);
+		
+		query.select(root).where(cb.equal(root.get("emailid"), email));
+		
+		TypedQuery<UserMaster> tq = entityManager.createQuery(query);
+		
+		UserMaster userdata = tq.getResultList().stream().findFirst().orElse(null);
+		
+//		UserMaster userdata=userRepository.findByEmailid(username);
+		
+		return userdata;
 	}
 
 	@Override
 	public List<Users> getUsersByRole(String role) 
 	{
-		return usersRepository.findByRole(role);
+//		return usersRepository.findByRole(role);
+		return null;
 	}
 
 	@Override
 	public Users updateUsers(Users users) 
 	{
-		Users user  = usersRepository.findByUserid(users.getUserid());
+//		Users user  = usersRepository.findByUserid(users.getUserid());
+//		
+//		user.setEmail(users.getEmail());
+//		user.setPassword(users.getPassword());
+//		user.setRole(users.getRole());
+//		user.setUsername(users.getUsername());
 		
-		user.setEmail(users.getEmail());
-		user.setPassword(users.getPassword());
-		user.setRole(users.getRole());
-		user.setUsername(users.getUsername());
-		
-		return usersRepository.save(user);
+//		return usersRepository.save(user);
+		return null;
 	}
 
 	@Override
 	public String DeleteUsersById(Integer id) {
 		// TODO Auto-generated method stub
-		usersRepository.deleteByUserid(id);
-		
+//		usersRepository.deleteByUserid(id);
+//		
 		return id+" removed from Users";
 	}
 	
@@ -126,30 +126,36 @@ public class TranslatorServiceImpl implements TranslatorService {
 //	@Autowired
 //	@PersistenceContext(unitName = "productentityManagerFactory")
 //	EntityManager entityManagerTest;
-	
-//	public UserMaster selectUserMaster(String username) {
+	@Override
+	public UserMaster selectUserMaster(String username) {
 		
-//		CriteriaBuilder cb=entityManager.getCriteriaBuilder();
-//		
-//		CriteriaQuery<UserMaster> query=cb.createQuery(UserMaster.class);
-//		
-//		Root<UserMaster> root=query.from(UserMaster.class);
-//		
-//		query.select(root).where(cb.equal(root.get("emailid"), username));
-//		
-//		TypedQuery<UserMaster> tq=entityManager.createQuery(query);
-//		
-//		UserMaster userdata=tq.getResultList().stream().findFirst().orElse(null);
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		
+		CriteriaQuery<UserMaster> query = cb.createQuery(UserMaster.class);
+		
+		Root<UserMaster> root = query.from(UserMaster.class);
+		
+		query.select(root).where(cb.equal(root.get("emailid"), username));
+		
+		TypedQuery<UserMaster> tq = entityManager.createQuery(query);
+		
+		UserMaster userdata = tq.getResultList().stream().findFirst().orElse(null);
 		
 //		UserMaster userdata=userRepository.findByEmailid(username);
 		
-//		return null;
-//	}
+		return userdata;
+	}
 //
 //	@Override
 //	public void saveTest(Test test) {
 //		productRepository.save(test);
 //	}
+
+	@Override
+	public Users findByEmailid(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 //	@Override

@@ -56,7 +56,6 @@ import com.global.translator.model.Test;
 import com.global.translator.model.UserMaster;
 import com.global.translator.model.Users;
 import com.global.translator.repositories.UserRepository;
-import com.global.translator.repositories.UsersRepository;
 
 /**
  * @author hariharan   24/09/22 11:11 AM
@@ -78,13 +77,13 @@ public class UserActions extends CommonUtils {
 	
 	@RequestMapping("userlogin")
 	public String userlogin(HttpSession session,
-			@ModelAttribute(value="users")Users users,RedirectAttributes ra) {
+			@ModelAttribute(value="usermaster")UserMaster users,RedirectAttributes ra) {
 		
 		_log.info("userlogin method is loading now....");
 		
-		Users usermaster = new Users();
+		UserMaster usermaster = new UserMaster();
 		
-		usermaster = service.findByEmailid(users.getUsername());
+		usermaster = service.selectUserMaster(users.getUsername());
 		
 		if(ObjectUtils.anyNotNull(usermaster)) 
 		{
@@ -92,7 +91,7 @@ public class UserActions extends CommonUtils {
 			{
 				session.setAttribute(LOGED_IN,"true");
 				session.setAttribute(USER_ID, usermaster.getUserid());
-				session.setAttribute(EMAIL_ID, usermaster.getEmail());
+				session.setAttribute(EMAIL_ID, usermaster.getEmailid());
 				session.setAttribute(USER_NAME, usermaster.getUsername());
 				session.setAttribute(ROLE, usermaster.getRole());
 				
@@ -195,7 +194,7 @@ public class UserActions extends CommonUtils {
 		
 		System.out.println("----------");
 		
-		EngLetter=EntToEng.get(Entitycode);
+		EngLetter = EntToEng.get(Entitycode);
 		
 		return EngLetter;
 	}
@@ -1177,8 +1176,8 @@ public class UserActions extends CommonUtils {
 //	@Autowired
 //	private UserRepository repositoryService;
 	
-	@Autowired
-	private UsersRepository usersrepository;
+//	@Autowired
+//	private UsersRepository usersrepository;
 	
 	@PostMapping("/addUsers")
 	@ResponseBody
@@ -1206,7 +1205,7 @@ public class UserActions extends CommonUtils {
 		 
 //		 List<UserMaster> sevedUser=User.getContent();
 		 
-		usersrepository.save(users);
+//		usersrepository.save(users);
 		
          return users;
         
@@ -1238,7 +1237,9 @@ public class UserActions extends CommonUtils {
 	@ResponseBody
 	public List<Users> getAllUsers()
 	{
-		return usersrepository.findAll();
+//		return usersrepository.findAll();
+		
+		return null;
 	}
 	
 	@GetMapping("/users/{role}")

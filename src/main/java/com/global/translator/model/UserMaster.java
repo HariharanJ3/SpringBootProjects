@@ -22,8 +22,8 @@ import lombok.Setter;
  *
  * Jun 20, 2023
  */
-//@Entity
-//@Table(name="usermaster")
+@Entity
+@Table(name="usermaster")
 @Component
 @Data
 @NoArgsConstructor

@@ -155,14 +155,14 @@ $(document).ready(function(){
     </div>  
 </section> 
 
-   <div style = "background: lightblue;">  
-	    <form id = "myForm" style = "font-size: 20px;" >  
-		    <p> First Name: <input type = "text" id = "fname" /> </p>  
-		    <p> Last Name: <input type = "checkbox" id = "lname" /> </p>  
-		    <p> E-mail Id:   <input type = "email" id = "email" /> </p>  
-		    <input type = "submit">  
-		    <button type = "reset"> Reset </button>  
-	    </form>
-    </div>
+<!--    <div style = "background: lightblue;">   -->
+<!-- 	    <form id = "myForm" style = "font-size: 20px;" >   -->
+<!-- 		    <p> First Name: <input type = "text" id = "fname" /> </p>   -->
+<!-- 		    <p> Last Name: <input type = "checkbox" id = "lname" /> </p>   -->
+<!-- 		    <p> E-mail Id:   <input type = "email" id = "email" /> </p>   -->
+<!-- 		    <input type = "submit">   -->
+<!-- 		    <button type = "reset"> Reset </button>   -->
+<!-- 	    </form> -->
+<!--     </div> -->
 </body>
 </html>

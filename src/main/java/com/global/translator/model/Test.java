@@ -23,8 +23,8 @@ import lombok.Setter;
  *
  * Jun 26, 2023
  */
-//@Entity
-//@Table(name="test")
+@Entity
+@Table(name="test")
 @Component
 @Getter
 @Setter
@@ -32,7 +32,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Test {
 	
-//	@Id
+	@Id
 	private Integer userid;
 	
 	private Integer productid;

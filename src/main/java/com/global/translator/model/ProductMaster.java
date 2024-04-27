@@ -23,8 +23,8 @@ import lombok.Setter;
  *
  * Jun 20, 2023
  */
-//@Entity
-//@Table(schema="testdb",name="productmaster")
+@Entity
+@Table(name="productmaster")
 @Component
 @Getter
 @Setter
@@ -32,8 +32,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProductMaster {
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer productid;
 	
 	private String productname;
