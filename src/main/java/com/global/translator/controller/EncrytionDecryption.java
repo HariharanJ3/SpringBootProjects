@@ -108,9 +108,10 @@ public class EncrytionDecryption {
 		
 		return decodedStr;
 	}
+	
     public static void main(String[] args) throws Exception {
 
-        String OUTPUT_FORMAT = "%-30s:%s";
+        /*String OUTPUT_FORMAT = "%-30s:%s";
         String PASSWORD = "vaaipu illa raja";
         String pText = "AES-GSMPassword";
 
@@ -125,8 +126,15 @@ public class EncrytionDecryption {
 
         PASSWORD="vaaipu illa raja";
         String decryptedText = EncrytionDecryption.decrypt(encryptedTextBase64, PASSWORD);
-        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (plain text)", decryptedText));
+        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (plain text)", decryptedText));*/
         
+    	String s = "venkatesh";
+    	
+    	String encryptedStr = "";
+    	
+    	System.out.println(encryptedStr = Encrypt(s));
+    	
+    	System.out.println(Decrypt(encryptedStr));
         
     }
 

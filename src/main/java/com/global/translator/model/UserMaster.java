@@ -39,6 +39,5 @@ public class UserMaster {
 	private String emailid;
 	private String phoneno;
 	private String role;
-	
 
 }

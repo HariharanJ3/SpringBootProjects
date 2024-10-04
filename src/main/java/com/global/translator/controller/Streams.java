@@ -38,7 +38,7 @@ public class Streams {
 	    userList.stream().map(u->u.getUserid()).forEach(System.out::println);*/
 		
 //		System.out.println("Legal Practitioners (Hourly Expense Rates for Purposes of Taxing Party and Party Costs) Rules, 2018".length());
-		String[] years=new String[] {"2023","2022","2021","2020","2019","2018","2017","2016","2014","2013","2012","2011","2010","2007"};
+		String[] years = new String[] {"2023","2022","2021","2020","2019","2018","2017","2016","2014","2013","2012","2011","2010","2007"};
 		int i=0;
 		
 		for(String year:years) {
@@ -47,8 +47,6 @@ public class Streams {
 //		String path="E:\\Hari_works\\Scraping_works\\2023\\AUG\\MALAWILLI\\LEGISLATION\\ALL LEGISLATION\\";
 		
 		File[] files=new File(path).listFiles();
-		
-		
 		
 		for(File file:files) {
 			System.out.println(file.getName());
@@ -73,7 +71,7 @@ public class Streams {
 			            
 //			            System.out.println(html.toString());
 			            
-			            String htmlString=html.toString().replace("<title>NAMIBLII</title>", "<title>Seylli</title>");
+			            String htmlString = html.toString().replace("<title>NAMIBLII</title>", "<title>Seylli</title>");
 			            
 			            downloadHtml(Filename,htmlString);
 			            

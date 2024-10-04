@@ -20,7 +20,7 @@ import org.jsoup.select.Elements;
 
 import com.global.translator.model.UserMaster;
 
-public class Example implements Test1{
+public class Example {
 	
 	static int count = 0;
 	

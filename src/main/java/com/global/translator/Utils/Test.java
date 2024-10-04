@@ -40,6 +40,8 @@ public class Test {
 	/**
 	 * @param args
 	 */
+	int x,y;
+	
 	public static void main(String[] args) {
 		
 		String domainName="https://malawilii.org";
@@ -218,7 +220,7 @@ public class Test {
 		try {
 			URL ur = new URL(url);
 			InputStream in = ur.openStream();
-			Files.copy(in, Paths.get(downloadPath), StandardCopyOption.REPLACE_EXISTING);
+//			Files.copy(in, Paths.get(downloadPath), StandardCopyOption.REPLACE_EXISTING);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -310,5 +312,10 @@ public class Test {
 		
 		System.out.println("replaced Files count==="+i);
 	}*/
+	
+	protected static void check()
+	{
+		System.out.println("Worked Well");
+	}
 	
 }

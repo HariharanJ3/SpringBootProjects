@@ -35,5 +35,7 @@ public interface TranslatorService {
 	String DeleteUsersById(Integer id);
 
 	UserMaster findByEmail(String email);
-
+	
 }
+
+

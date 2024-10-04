@@ -114,28 +114,27 @@ public class UserActions extends CommonUtils {
 		
 		if(CommonMethods.isLogin(request.getSession(false))) 
 		{
-			
-			System.out.println(hindiletter);
+			 System.out.println(hindiletter);
 			
 			 ltrToEnt=new HashMap<String, String>();
 			 EntToEng=new HashMap<String, String>();
 			 Combination=new HashMap<String,String>();
 			
-			ltrToEnt = setEntityCode();
-			EntToEng = setEntToEng();
-			Combination = setCombination();
+			 ltrToEnt = setEntityCode();
+			 EntToEng = setEntToEng();
+			 Combination = setCombination();
 			
-			char[] ch=hindiletter.toCharArray();
+			 char[] ch = hindiletter.toCharArray();
 			
-			int  len=ch.length;
+			 int len = ch.length;
 			
-			for(int i=0;i < ch.length;i++) {
-				
+			 for(int i=0;i < ch.length;i++) 
+			 {
 				if(String.valueOf(ch[i]).equals(" ") || String.valueOf(ch[i]).matches("[0-9]"))
 					TranslatedText += String.valueOf(ch[i]);
-				else {
-				
-				if(len > 1) {
+				else 
+				{
+				  if(len > 1) {
 					
 					try {
 						if(i+1 >= len) {
@@ -1081,32 +1080,32 @@ public class UserActions extends CommonUtils {
 		
 		_log.info("imageReader method is loading now....");
 		
-		String filename="";
+		String filename = "";
 		
-		String result="";
+		String result = "";
 		
-		for(MultipartFile file:imagefile) {
-			
-			filename=file.getOriginalFilename();
+		for(MultipartFile file:imagefile) 
+		{
+			filename = file.getOriginalFilename();
 			
 			File fileUrl = new File(FILE_PATH_URL+filename);
 			
 			if(fileUrl.exists())
 				fileUrl.delete();
 			
-			try {
+			try 
+			{
 				Files.copy(file.getInputStream(),FILE_PATH.resolve(filename.trim()));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
-		
-		
 		// Create instance of OCR API
 		AsposeOCR api = new AsposeOCR();
-		try {
+		
+		try 
+		{
 		    // Recognize image
 			 result = api.RecognizePage(FILE_PATH_URL+filename);
 		    // Display the recognition result
@@ -1138,7 +1137,6 @@ public class UserActions extends CommonUtils {
 		
 		return result;		
 	}
-	
 	
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest request) {
@@ -1230,7 +1228,7 @@ public class UserActions extends CommonUtils {
 	{
 		_log.info("exercise method is Loading now.....");
 		
-		return "exercise";
+		return "NewFile";
 	}
 	
 	@GetMapping("/users")

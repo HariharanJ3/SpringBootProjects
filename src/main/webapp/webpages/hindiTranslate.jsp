@@ -170,6 +170,11 @@ function sendJsonData()
 		    console.log('Response:', data);
 		  });*/
 }
+
+function checkScreenWidth()
+{
+	alert("width====="+screen.width);
+}
 </script>
 <style>
 .sizeIncre{
@@ -667,7 +672,7 @@ function sendJsonData()
 <div class="container">
 	<div class="row mt-4 pt-2 text-center">
 		<div class="col">
-			<button onclick="sendJsonData()">sendJsonData</button>
+			<button onclick="checkScreenWidth()">sendJsonData</button>
 		</div>
 	</div>
 </div>

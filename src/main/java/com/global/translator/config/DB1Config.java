@@ -58,6 +58,22 @@ public class DB1Config {
 //	    return new JpaTransactionManager(entityManagerFactory);
 //	}
 	
-	 	
-
+	public int x = 5, y = 10;
+	
+	public static String stat = "hiii";
+	
+	public static void name()
+	{
+		System.out.println("Hariharan J");
+	}
+	
+	public void instanMethod()
+	{
+		System.out.println("instanMethod in DBconfig");
+	}
+	
+	public DB1Config()
+	{
+		System.out.println("Parent Class");
+	}
 }
