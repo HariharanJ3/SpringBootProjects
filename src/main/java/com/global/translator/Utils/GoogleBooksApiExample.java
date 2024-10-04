@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class GoogleBooksApiExample {
     private static final String API_URL = "https://www.googleapis.com/books/v1/volumes?q=";
-    private static final String API_KEY = "&key=AIzaSyDeII9mZ8eYmig-rjHeJ8dk6-5hUFbZ9GY";
+    private static final String API_KEY = "&key=";
     private static final OkHttpClient client = new OkHttpClient();
     private static final Gson gson = new Gson();
 
