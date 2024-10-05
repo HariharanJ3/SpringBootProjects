@@ -1,0 +1,29 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 0.3s ease;
+}
+
+#page1 { background-color: red; }
+#page2 { background-color: green; }
+#page3 { background-color: blue; }
+
+.page.active {
+    left: 0;
+}
